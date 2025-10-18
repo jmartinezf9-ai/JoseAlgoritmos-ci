@@ -1,0 +1,7 @@
+# Archivos de CodeIgniter y XAMPP
+/system/
+/user_guide/
+/vendor/
+/uploads/
+# Ignorar configuraciones de CodeIgniter si usas archivos separados
+/application/config/database.php

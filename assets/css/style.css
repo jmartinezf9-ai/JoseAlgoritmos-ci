@@ -1,0 +1,148 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo gris claro */
+    color: #333;
+}
+
+/* --- Layout del Encabezado (HEADER) --- */
+header {
+    background-color: #333; /* Fondo oscuro para la barra de navegación */
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex; /* CRÍTICO: Alinea los hijos (left-nav y right-nav) horizontalmente */
+    justify-content: space-between; /* CRÍTICO: Envía un elemento a la izquierda y otro a la derecha */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 14px;
+}
+
+.right-nav {
+    display: flex; /* CRÍTICO: Alinea los enlaces de usuario horizontalmente */
+    align-items: center;
+}
+
+.right-nav a, .right-nav span {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Estilo para el idioma activo (rojo) */
+nav .left-nav a[style*="red"] {
+    color: #ff4d4d !important;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Títulos --- */
+h2 {
+    color: #007bff;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* --- Estilos de Contenedores y Formularios --- */
+.card-box, .form-container, .table-container {
+    background: white;
+    padding: 25px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #a8cde5;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* --- Botones y Acciones --- */
+button, .actions {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+button[type="submit"], .actions.save, .actions.edit { 
+    background-color: #007bff; 
+    color: white;
+    margin-top: 20px;
+}
+
+.actions.cancel, .actions.delete { 
+    background-color: #dc3545; 
+    color: white;
+}
+
+/* --- Tablas --- */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+th, td { 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    text-align: left; 
+}
+th { 
+    background-color: #f2f2f2; 
+}
+
+/* --- Alertas --- */
+.alert-success { 
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border-radius: 4px; 
+}
+
+.alert-error { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border-radius: 4px; 
+}
