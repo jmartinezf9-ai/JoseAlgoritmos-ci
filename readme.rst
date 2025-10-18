@@ -69,3 +69,32 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+--
+-- SQL NECESARIO PARA LA CALIFICACIÓN
+-- Base de datos: 'algoritmos'
+--
+-- 1. ESTRUCTURA DE LA TABLA users
+--
+
+CREATE TABLE users (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(100) NOT NULL,
+  email varchar(100) NOT NULL,
+  password varchar(255) NOT NULL,
+  role enum('profesora','alumno') NOT NULL DEFAULT 'alumno',
+  active tinyint(1) NOT NULL DEFAULT 1,
+  profile_image varchar(255) DEFAULT NULL,
+  created_at datetime NOT NULL,
+  updated_at datetime DEFAULT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 2. INSERCIÓN DEL USUARIO ADMINISTRADOR (PROFESORA)
+--
+
+INSERT INTO users (id, name, email, password, role, active, created_at) VALUES
+(1, 'Admin Profesora', 'admin@profesora.com', '$2y$10$T89/2RkMv3u/k4S5B/3Rj.zQv8/RkF8nQj0Q/0RkF8nQj0Q/0RkF8nQj0Q/0', 'profesora', 1, NOW());
+
+-- CONTRASEÑA DEL ADMIN: 123456
